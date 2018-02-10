@@ -3,6 +3,7 @@
 http://wiki.jikexueyuan.com/list/back-end/
 https://github.com/waylau/netty-4-user-guide 
 https://github.com/loafer/free-programming-books-zh_CN.git
+https://waylau.gitbooks.io/essential-java/
 
 
 [![Build Status](https://travis-ci.org/justjavac/free-programming-books-zh_CN.svg?branch=master)](https://travis-ci.org/justjavac/free-programming-books-zh_CN)
