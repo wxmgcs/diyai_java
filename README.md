@@ -4,8 +4,6 @@ http://wiki.jikexueyuan.com/list/back-end/
 https://github.com/waylau/netty-4-user-guide 
 https://github.com/loafer/free-programming-books-zh_CN.git
 
-免费的编程中文书籍索引
-============================
 
 [![Build Status](https://travis-ci.org/justjavac/free-programming-books-zh_CN.svg?branch=master)](https://travis-ci.org/justjavac/free-programming-books-zh_CN)
 
@@ -16,14 +14,6 @@ https://github.com/loafer/free-programming-books-zh_CN.git
 - [github](https://github.com/vhf/free-programming-books) 上的一个流行的编程书籍索引  [中文版](https://github.com/vhf/free-programming-books/blob/master/free-programming-books-zh.md)
 
 感谢 [@siberiawolf](https://github.com/siberiawolf) 使用 Bootstrap 开发了网页版，地址：http://siberiawolf.com/free_programming/index.html
-
-## 参与交流
-
-欢迎大家将珍藏已久的经典免费书籍共享出来，您可以：
-
-* 使用 [Issues](https://github.com/justjavac/free-programming-books-zh_CN/issues) 以及 Pull Request
-
-贡献者名单: https://github.com/justjavac/free-programming-books-zh_CN/graphs/contributors
 
 ## 目录
 
