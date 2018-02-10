@@ -287,23 +287,23 @@
             // Test program
         public static void main( String [ ] args )
         {
-            AvlTree t = new AvlTree( );
-            final int NUMS = 4000;
-            final int GAP  =   37;
-
-            System.out.println( "Checking... (no more output means success)" );
-
-            for( int i = GAP; i != 0; i = ( i + GAP ) % NUMS )
-                t.insert( new MyInteger( i ) );
-
-            if( NUMS < 40 )
-                t.printTree( );
-            if( ((MyInteger)(t.findMin( ))).intValue( ) != 1 ||
-                ((MyInteger)(t.findMax( ))).intValue( ) != NUMS - 1 )
-                System.out.println( "FindMin or FindMax error!" );
-
-            for( int i = 1; i < NUMS; i++ )
-                 if( ((MyInteger)(t.find( new MyInteger( i ) ))).intValue( ) != i )
-                     System.out.println( "Find error1!" );
+//            AvlTree t = new AvlTree( );
+//            final int NUMS = 4000;
+//            final int GAP  =   37;
+//
+//            System.out.println( "Checking... (no more output means success)" );
+//
+//            for( int i = GAP; i != 0; i = ( i + GAP ) % NUMS )
+//                t.insert( new MyInteger( i ) );
+//
+//            if( NUMS < 40 )
+//                t.printTree( );
+//            if( ((MyInteger)(t.findMin( ))).intValue( ) != 1 ||
+//                ((MyInteger)(t.findMax( ))).intValue( ) != NUMS - 1 )
+//                System.out.println( "FindMin or FindMax error!" );
+//
+//            for( int i = 1; i < NUMS; i++ )
+//                 if( ((MyInteger)(t.find( new MyInteger( i ) ))).intValue( ) != i )
+//                     System.out.println( "Find error1!" );
     }
 }

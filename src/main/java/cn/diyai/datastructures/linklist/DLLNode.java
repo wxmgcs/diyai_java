@@ -38,6 +38,11 @@ public class DLLNode {
 		return previous;
 	}
 
+
+	private int getDLLLength(DLLNode headNode){
+		return 0;
+	}
+
 	/**
 	 * 双向链表的中间插入一个结点
 	 * 

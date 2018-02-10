@@ -31,7 +31,6 @@ public class ClassPathXmlApplicationContext implements BeanFactory  {
 
 	}
 	
-	@Override
 	public Object getBean(String id) {
 		
 		return container.get(id);

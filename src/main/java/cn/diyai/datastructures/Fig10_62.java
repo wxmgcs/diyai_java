@@ -1,6 +1,5 @@
 package cn.diyai.datastructures;
 
-import DataStructures.Random;
 
     public class Fig10_62
     {

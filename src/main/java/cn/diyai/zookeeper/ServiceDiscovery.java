@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.CountDownLatch;
 
-import static com.ctu.zookeeper.Constant.CONNECTION_STRING;
+import static cn.diyai.zookeeper.Constant.CONNECTION_STRING;
 
 /**
  *

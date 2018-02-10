@@ -1,7 +1,9 @@
+package cn.diyai.dp.jdom;
 import java.util.*;
 import org.jdom.*;
 import org.jdom.input.SAXBuilder;
 import org.jdom.xpath.XPath;
+
 	public class Sample2 {  
 		 public static void main(String[] args) throws Exception {
 		  SAXBuilder sb = new SAXBuilder();

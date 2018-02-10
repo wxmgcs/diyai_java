@@ -1,8 +1,5 @@
 package cn.diyai.datastructures;
 
-import DataStructures.Comparable;
-    import DataStructures.MyInteger;
-
 import java.lang.Comparable;
 
 /**

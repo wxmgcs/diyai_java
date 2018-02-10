@@ -12,7 +12,8 @@ public class CircularList {
 	 * @return
 	 */
 	int getLength(CLLNode headNode){
-		
+
+		return 0;
 	}
 	
 	/**
@@ -55,9 +56,4 @@ public class CircularList {
 	void deleteFrontNodeFromCLL(CLLNode head){
 		
 	}
-	
-	
-	
-	
-	
 }

@@ -1,7 +1,5 @@
 package cn.diyai.datastructures;
 
-import DataStructures.Overflow;
- 
     /*
      * This code doesn't really do much, and abstraction is not built in.
      * Thus, I haven't bothered testing it exhaustively.

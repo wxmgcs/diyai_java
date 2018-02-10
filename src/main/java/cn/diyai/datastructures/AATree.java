@@ -279,32 +279,32 @@
             // Test program; should print min and max and nothing else
         public static void main( String [ ] args )
         {
-            AATree t = new AATree( );
-            final int NUMS = 40000;
-            final int GAP  =   307;
-
-            System.out.println( "Checking... (no bad output means success)" );
-
-            for( int i = GAP; i != 0; i = ( i + GAP ) % NUMS )
-                t.insert( new MyInteger( i ) );
-            System.out.println( "Inserts complete" );
-
-            for( int i = 1; i < NUMS; i+= 2 )
-                t.remove( new MyInteger( i ) );
-            System.out.println( "Removes complete" );
-
-            if( NUMS < 40 )
-                t.printTree( );
-            if( ((MyInteger)(t.findMin( ))).intValue( ) != 2 ||
-                ((MyInteger)(t.findMax( ))).intValue( ) != NUMS - 2 )
-                System.out.println( "FindMin or FindMax error!" );
-
-            for( int i = 2; i < NUMS; i+=2 )
-                if( ((MyInteger)t.find( new MyInteger( i ) )).intValue( ) != i )
-                    System.out.println( "Error: find fails for " + i );
-
-            for( int i = 1; i < NUMS; i+=2 )
-                if( t.find( new MyInteger( i ) )  != null )
-                    System.out.println( "Error: Found deleted item " + i );
+//            AATree t = new AATree( );
+//            final int NUMS = 40000;
+//            final int GAP  =   307;
+//
+//            System.out.println( "Checking... (no bad output means success)" );
+//
+//            for( int i = GAP; i != 0; i = ( i + GAP ) % NUMS )
+//                t.insert( new MyInteger( i ) );
+//            System.out.println( "Inserts complete" );
+//
+//            for( int i = 1; i < NUMS; i+= 2 )
+//                t.remove( new MyInteger( i ) );
+//            System.out.println( "Removes complete" );
+//
+//            if( NUMS < 40 )
+//                t.printTree( );
+//            if( ((MyInteger)(t.findMin( ))).intValue( ) != 2 ||
+//                ((MyInteger)(t.findMax( ))).intValue( ) != NUMS - 2 )
+//                System.out.println( "FindMin or FindMax error!" );
+//
+//            for( int i = 2; i < NUMS; i+=2 )
+//                if( ((MyInteger)t.find( new MyInteger( i ) )).intValue( ) != i )
+//                    System.out.println( "Error: find fails for " + i );
+//
+//            for( int i = 1; i < NUMS; i+=2 )
+//                if( t.find( new MyInteger( i ) )  != null )
+//                    System.out.println( "Error: Found deleted item " + i );
         }
     }

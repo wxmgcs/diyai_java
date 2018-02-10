@@ -151,28 +151,28 @@
             // Test program
         public static void main( String [ ] args )
         {
-            int numItems = 10000;
-            BinaryHeap h = new BinaryHeap( numItems );
-            int i = 37;
-
-            try
-            {
-                for( i = 37; i != 0; i = ( i + 37 ) % numItems )
-                    h.insert( new MyInteger( i ) );
-                for( i = 1; i < numItems; i++ )
-                    if( ((MyInteger)( h.deleteMin( ) )).intValue( ) != i )
-                        System.out.println( "Oops! " + i );
-
-                for( i = 37; i != 0; i = ( i + 37 ) % numItems )
-                    h.insert( new MyInteger( i ) );
-                h.insert( new MyInteger( 0 ) );
-                i = 9999999;
-                h.insert( new MyInteger( i ) );
-                for( i = 1; i <= numItems; i++ )
-                    if( ((MyInteger)( h.deleteMin( ) )).intValue( ) != i )
-                        System.out.println( "Oops! " + i + " " );
-            }
-            catch( Overflow e )
-              { System.out.println( "Overflow (expected)! " + i  ); }
+//            int numItems = 10000;
+//            BinaryHeap h = new BinaryHeap( numItems );
+//            int i = 37;
+//
+//            try
+//            {
+//                for( i = 37; i != 0; i = ( i + 37 ) % numItems )
+//                    h.insert( new MyInteger( i ) );
+//                for( i = 1; i < numItems; i++ )
+//                    if( ((MyInteger)( h.deleteMin( ) )).intValue( ) != i )
+//                        System.out.println( "Oops! " + i );
+//
+//                for( i = 37; i != 0; i = ( i + 37 ) % numItems )
+//                    h.insert( new MyInteger( i ) );
+//                h.insert( new MyInteger( 0 ) );
+//                i = 9999999;
+//                h.insert( new MyInteger( i ) );
+//                for( i = 1; i <= numItems; i++ )
+//                    if( ((MyInteger)( h.deleteMin( ) )).intValue( ) != i )
+//                        System.out.println( "Oops! " + i + " " );
+//            }
+//            catch( Overflow e )
+//              { System.out.println( "Overflow (expected)! " + i  ); }
         }
     }

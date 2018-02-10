@@ -96,6 +96,11 @@ public class ListNode {
 			iterator = auxilaryNode;
 		}
 	}
+
+	private int getLinkedListLength(ListNode headNode){
+		return 0;
+	}
+
 	
 	/**
 	 * 删除单向链表中间的一个结点
@@ -147,9 +152,8 @@ public class ListNode {
 	}
 	
 	int findBeginofLoop(ListNode head){
-	
-		
-		return null;
+
+		return 0;
 	}
 	
 	

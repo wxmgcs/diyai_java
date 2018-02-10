@@ -39,7 +39,7 @@
         {
             if( newNode == null )
                 newNode = new BinaryNode( null );
-            newNode.element = x;
+//            newNode.element = x;
 
             if( root == nullNode )
             {
@@ -80,8 +80,8 @@
 
                 // If x is found, it will be at the root
             root = splay( x, root );
-            if( root.element.compareTo( x ) != 0 )
-                return;   // Item not found; do nothing
+//            if( root.element.compareTo( x ) != 0 )
+//                return;   // Item not found; do nothing
 
             if( root.left == nullNode )
                 newTree = root.right;
@@ -114,8 +114,10 @@
             while( ptr.left != nullNode )
                 ptr = ptr.left;
 
-            root = splay( ptr.element, root );
-            return ptr.element;
+//            root = splay( ptr.element, root );
+//            return ptr.element;
+
+            return "wxm";
         }
 
         /**
@@ -136,8 +138,9 @@
             while( ptr.right != nullNode )
                 ptr = ptr.right;
 
-            root = splay( ptr.element, root );
-            return ptr.element;
+//            root = splay( ptr.element, root );
+//            return ptr.element;
+            return "wxm";
         }
 
         /**
@@ -149,10 +152,10 @@
         {
             root = splay( x, root );
 
-            if( root.element.compareTo( x ) != 0 )
-                return null;
-
-            return root.element;
+//            if( root.element.compareTo( x ) != 0 )
+//                return null;
+//            return root.element;
+            return "wxm";
         }
 
         /**
@@ -197,7 +200,7 @@
             header.left = header.right = nullNode;
             leftTreeMax = rightTreeMin = header;
 
-            nullNode.element = x;   // Guarantee a match
+//            nullNode.element = x;   // Guarantee a match
 
             for( ; ; )
                 if( x.compareTo( t.element ) < 0 )

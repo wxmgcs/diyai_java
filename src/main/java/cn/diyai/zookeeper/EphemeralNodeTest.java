@@ -5,8 +5,8 @@ import org.apache.zookeeper.*;
 import java.io.IOException;
 import java.util.Scanner;
 
-import static com.ctu.zookeeper.Constant.CONNECTION_STRING;
-import static com.ctu.zookeeper.Constant.CONNECTION_TIMEOUT;
+import static cn.diyai.zookeeper.Constant.CONNECTION_STRING;
+import static cn.diyai.zookeeper.Constant.CONNECTION_TIMEOUT;
 
 /**
  * @author zhaojh.

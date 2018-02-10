@@ -8,7 +8,7 @@
      * In Java 1.2, you can use Integer if Comparable is needed.
      * @author Mark Allen Weiss
      */
-    public final class MyInteger implements java.lang.Comparable, Hashable
+     public class MyInteger implements Comparable, Hashable
     {
         /**
          * Construct the MyInteger object with initial value 0.
@@ -58,6 +58,10 @@
         {
             return value < ((MyInteger)rhs).value ? -1 :
                    value == ((MyInteger)rhs).value ? 0 : 1;
+        }
+
+        public int compareTo(Object o) {
+            return 0;
         }
 
         /**
