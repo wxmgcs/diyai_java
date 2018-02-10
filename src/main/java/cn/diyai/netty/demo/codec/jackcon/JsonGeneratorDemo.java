@@ -1,4 +1,4 @@
-package netty.demo.codec.jackcon;
+package cn.diyai.netty.demo.codec.jackcon;
 
 import com.fasterxml.jackson.core.JsonEncoding;
 import com.fasterxml.jackson.core.JsonFactory;

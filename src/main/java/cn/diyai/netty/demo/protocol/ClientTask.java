@@ -1,4 +1,4 @@
-package netty.demo.protocol;
+package cn.diyai.netty.demo.protocol;
 
 /**
  * 说明：

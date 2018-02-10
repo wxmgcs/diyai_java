@@ -1,4 +1,4 @@
-package netty.demo.codec.serialization;
+package cn.diyai.netty.demo.codec.serialization;
 
 import java.io.Serializable;
 

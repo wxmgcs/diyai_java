@@ -1,4 +1,4 @@
-package netty.demo.factorial;
+package cn.diyai.netty.demo.factorial;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;

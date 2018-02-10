@@ -1,4 +1,4 @@
-package netty.demo.codec.jackcon;
+package cn.diyai.netty.demo.codec.jackcon;
 
 import java.util.List;
 import java.util.Map;

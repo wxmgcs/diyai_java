@@ -1,7 +1,7 @@
 /**
  * 
  */
-package netty.demo.file;
+package cn.diyai.netty.demo.file;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;

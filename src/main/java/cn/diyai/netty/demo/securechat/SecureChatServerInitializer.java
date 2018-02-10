@@ -1,4 +1,4 @@
-package netty.demo.securechat;
+package cn.diyai.netty.demo.securechat;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;

@@ -1,4 +1,4 @@
-package netty.demo.websocketchat;
+package cn.diyai.netty.demo.websocketchat;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;

@@ -1,4 +1,4 @@
-package netty.demo.websocketchat;
+package cn.diyai.netty.demo.websocketchat;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;

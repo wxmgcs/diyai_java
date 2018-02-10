@@ -1,4 +1,4 @@
-package netty.demo.discard;
+package cn.diyai.netty.demo.discard;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;

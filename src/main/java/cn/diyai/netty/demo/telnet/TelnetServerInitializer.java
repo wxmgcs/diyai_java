@@ -1,4 +1,4 @@
-package netty.demo.telnet;
+package cn.diyai.netty.demo.telnet;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;

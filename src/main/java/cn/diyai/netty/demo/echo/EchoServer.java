@@ -1,4 +1,4 @@
-package netty.demo.echo;
+package cn.diyai.netty.demo.echo;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;

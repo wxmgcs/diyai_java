@@ -1,7 +1,7 @@
 /**
  * 
  */
-package netty.demo.protocol;
+package cn.diyai.netty.demo.protocol;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;

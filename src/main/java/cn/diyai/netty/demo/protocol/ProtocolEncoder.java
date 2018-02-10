@@ -1,7 +1,7 @@
 /**
  * 
  */
-package netty.demo.protocol;
+package cn.diyai.netty.demo.protocol;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;

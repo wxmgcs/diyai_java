@@ -1,4 +1,4 @@
-package netty.demo.codec.serialization;
+package cn.diyai.netty.demo.codec.serialization;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;

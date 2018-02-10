@@ -1,4 +1,4 @@
-package netty.demo.echo;
+package cn.diyai.netty.demo.echo;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;

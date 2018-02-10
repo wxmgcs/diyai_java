@@ -1,4 +1,4 @@
-package netty.demo.heartbeat;
+package cn.diyai.netty.demo.heartbeat;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;

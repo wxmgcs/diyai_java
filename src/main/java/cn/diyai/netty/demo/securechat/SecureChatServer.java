@@ -1,4 +1,4 @@
-package netty.demo.securechat;
+package cn.diyai.netty.demo.securechat;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.EventLoopGroup;

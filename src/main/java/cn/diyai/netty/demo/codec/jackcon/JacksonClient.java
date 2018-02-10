@@ -1,4 +1,4 @@
-package netty.demo.codec.jackcon;
+package cn.diyai.netty.demo.codec.jackcon;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;

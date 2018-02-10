@@ -6,4 +6,4 @@
  *
  * @author <a href="http://www.waylau.com">waylau.com</a> 2015年11月7日 
  */
-package netty.demo.codec.serialization;
+package cn.diyai.netty.demo.codec.serialization;

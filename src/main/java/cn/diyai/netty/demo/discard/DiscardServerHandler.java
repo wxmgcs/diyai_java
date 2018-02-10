@@ -1,4 +1,4 @@
-package netty.demo.discard;
+package cn.diyai.netty.demo.discard;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;

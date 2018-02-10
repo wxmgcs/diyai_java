@@ -1,4 +1,4 @@
-package netty.demo.echo;
+package cn.diyai.netty.demo.echo;
 
 
 

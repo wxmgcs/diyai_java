@@ -1,7 +1,7 @@
 /**
  * 
  */
-package netty.demo.codec.jackcon;
+package cn.diyai.netty.demo.codec.jackcon;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;

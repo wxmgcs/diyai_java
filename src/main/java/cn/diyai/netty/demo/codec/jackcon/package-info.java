@@ -5,4 +5,4 @@
  * 说明：使用 Jackson json 来执行序列化
  * @author <a href="http://www.waylau.com">waylau.com</a>  2015年11月8日
  */
-package netty.demo.codec.jackcon;
+package cn.diyai.netty.demo.codec.jackcon;

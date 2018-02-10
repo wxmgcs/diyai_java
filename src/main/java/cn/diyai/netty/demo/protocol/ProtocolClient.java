@@ -1,4 +1,4 @@
-package netty.demo.protocol;
+package cn.diyai.netty.demo.protocol;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;

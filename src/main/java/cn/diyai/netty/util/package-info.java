@@ -6,4 +6,4 @@
  *
  * @author <a href="http://www.waylau.com">waylau.com</a> 2015年11月10日 
  */
-package netty.util;
+package cn.diyai.netty.util;

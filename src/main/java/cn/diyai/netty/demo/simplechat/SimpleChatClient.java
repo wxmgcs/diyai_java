@@ -1,4 +1,4 @@
-package netty.demo.simplechat;
+package cn.diyai.netty.demo.simplechat;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;

@@ -3,4 +3,4 @@
  *
  * @author <a href="http://www.waylau.com">waylau.com</a> 2015年11月4日 
  */
-package netty.demo.protocol;
+package cn.diyai.netty.demo.protocol;

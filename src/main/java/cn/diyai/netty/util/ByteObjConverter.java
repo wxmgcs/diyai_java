@@ -1,7 +1,7 @@
 /**
  * 
  */
-package netty.util;
+package cn.diyai.netty.util;
 
 import java.io.*;
 

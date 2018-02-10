@@ -1,7 +1,7 @@
 /**
  * 
  */
-package netty.demo.protocol;
+package cn.diyai.netty.demo.protocol;
 
 /**
  * 说明：消息类型

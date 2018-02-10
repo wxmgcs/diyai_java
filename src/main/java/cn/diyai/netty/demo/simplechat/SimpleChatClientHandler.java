@@ -1,4 +1,4 @@
-package netty.demo.simplechat;
+package cn.diyai.netty.demo.simplechat;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;

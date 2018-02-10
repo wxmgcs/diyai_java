@@ -1,4 +1,4 @@
-package netty.demo.time;
+package cn.diyai.netty.demo.time;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;

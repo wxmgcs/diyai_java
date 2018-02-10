@@ -1,4 +1,4 @@
-package netty.demo.telnet;
+package cn.diyai.netty.demo.telnet;
 
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;

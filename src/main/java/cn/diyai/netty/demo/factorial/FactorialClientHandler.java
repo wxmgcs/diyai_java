@@ -1,4 +1,4 @@
-package netty.demo.factorial;
+package cn.diyai.netty.demo.factorial;
 
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;

@@ -1,4 +1,4 @@
-package netty.demo.factorial;
+package cn.diyai.netty.demo.factorial;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
