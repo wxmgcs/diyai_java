@@ -6,14 +6,28 @@
 
     <groupId>cn.diyai</groupId>
     <artifactId>diyai_java</artifactId>
+    <packaging>pom</packaging>
     <version>1.0</version>
+    <modules>
+        <module>dubbo-demo-api</module>
+        <module>dubbo-demo-consumer</module>
+        <module>dubbo-demo-provider</module>
+    </modules>
 
-    <name>unicomrecharge</name>
+    <name>diyai_java</name>
     <url>http://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <netty.version>4.1.16.Final</netty.version>
+        <version.jackson.core>2.6.3</version.jackson.core>
+        <dubbo.version>2.8.4</dubbo.version>
+        <servlet.version>3.1.0</servlet.version>
+        <spring.boot.version>1.2.5.RELEASE</spring.boot.version>
+        <zkclient.version>0.1</zkclient.version>
+        <dubbo.demo.version>0.0.1-SNAPSHOT</dubbo.demo.version>
+        <commons.lang3.version>3.1</commons.lang3.version>
+        <curator_version>2.5.0</curator_version>
     </properties>
 
     <dependencies>
@@ -65,8 +79,59 @@
             <version>2.10.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${version.jackson.core}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.sgroschupf</groupId>
+            <artifactId>zkclient</artifactId>
+            <version>${zkclient.version}</version>
+        </dependency>
 
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <optimize>true</optimize>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
 
+        </plugins>
+    </build>
 
 </project>

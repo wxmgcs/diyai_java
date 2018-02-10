@@ -7,10 +7,12 @@
        http://code.alibabatech.com/schema/dubbo
        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-    <dubbo:application name="hello-cluster-consumer"/>
+    <dubbo:application name="hello-cluster-provider"/>
 
-    <dubbo:registry address="zookeeper://127.0.0.1:2181" client="curator"/>
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
 
-    <dubbo:reference id="helloService"
-                     interface="com.github.loafer.demo.dubbo.api.hello.HelloService"/>
+    <dubbo:protocol name="dubbo" port="20882"/>
+
+    <dubbo:service interface="com.github.loafer.demo.dubbo.api.hello.HelloService"
+                   ref="helloService"/>
 </beans>

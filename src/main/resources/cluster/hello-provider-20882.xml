@@ -13,6 +13,6 @@
 
     <dubbo:protocol name="dubbo" port="20882"/>
 
-    <dubbo:service interface="com.github.loafer.demo.dubbo.api.hello.HelloService"
+    <dubbo:service interface="com.github.loafer.demo.dubbo.api.com.github.loafer.demo.dubbo.api.hello.HelloService"
                    ref="helloService"/>
 </beans>

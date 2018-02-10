@@ -10,7 +10,7 @@ import org.springframework.context.annotation.ImportResource;
 //@SpringBootApplication(exclude = MulticastProvider.class)
 @Configuration
 @ImportResource({"applicationContext.xml","provider-zookeeper.xml"})
-public class ZookeeperProvider extends AbstractProvider{
+public class ZookeeperProvider extends AbstractProvider {
 
     public static void main(String[] args){
         SpringApplication.run(ZookeeperProvider.class, args);

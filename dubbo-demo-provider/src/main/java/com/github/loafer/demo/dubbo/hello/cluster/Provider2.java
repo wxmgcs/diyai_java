@@ -10,7 +10,7 @@ import org.springframework.context.annotation.ImportResource;
  */
 @Configuration
 @ImportResource({"applicationContext.xml", "cluster/hello-provider-20881.xml"})
-public class Provider2 extends AbstractProvider {
+public class Provider2 extends AbstractProvider{
     public static void main(String[] args){
         SpringApplication.run(Provider2.class, "20881");
     }
