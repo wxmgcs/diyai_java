@@ -31,8 +31,10 @@ public class JacksonDecoder<T> extends ByteToMessageDecoder {
 	@Override
 	protected void decode(ChannelHandlerContext ctx, ByteBuf in,
 						  List<Object> out) throws Exception {
-        ByteBufInputStream byteBufInputStream = new ByteBufInputStream(in);
-        out.add(JacksonMapper.getInstance().readValue(byteBufInputStream, clazz));
+/*
+		ByteBufInputStream byteBufInputStream = new ByteBufInputStream(in);
+		out.add(JacksonMapper.getInstance().readValue(byteBufInputStream, clazz));
+*/
 
 	}
 
