@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.waylau.essentialjava.concurrency;
+package cn.diyai.java_base.concurrency;
 
 import java.util.Random;
 

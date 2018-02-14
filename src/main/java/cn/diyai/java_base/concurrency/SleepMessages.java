@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.waylau.essentialjava.concurrency;
+package cn.diyai.java_base.concurrency;
 
 /**
  * @author <a href="http://www.waylau.com">waylau.com</a>

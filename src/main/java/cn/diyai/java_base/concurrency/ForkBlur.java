@@ -1,13 +1,13 @@
 /**
  * 
  */
-package com.waylau.essentialjava.concurrency;
+package cn.diyai.java_base.concurrency;
 
+import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveAction;
-import javax.imageio.ImageIO;
 
 /**
  * @author <a href="http://www.waylau.com">waylau.com</a>
