@@ -1,4 +1,7 @@
 # diy_java
+
+synchronized
+
 参考资料
 http://wiki.jikexueyuan.com/list/back-end/
 https://github.com/waylau/netty-4-user-guide 
