@@ -17,6 +17,7 @@ public class Boy {
 		Gift g = new WildGift(new Ring());
 		//give(g, mm);
 	}
+
 	
 	public void give(Gift g, MM mm) {
 		
