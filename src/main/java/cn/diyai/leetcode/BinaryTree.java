@@ -76,6 +76,11 @@ public class BinaryTree {
         }
 
         int rootValue = root.val;
+
+        if(root.left == null && root.right == null){
+            return rootValue;
+        }
+
         if (root.left == null && root.right != null) {
             return rootValue * 10 + root.right.val;
         }
