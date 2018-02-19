@@ -55,16 +55,52 @@ public class BinaryTree {
         return level;
     }
 
+    /**
+     * Given a binary tree containing digits from0-9only, each root-to-leaf path could represent a number.
+     * An example is the root-to-leaf path1->2->3which represents the number123.
+     * Find the total sum of all root-to-leaf numbers.
+     * For example,
+     * 1
+     * / \
+     * 2   3
+     * The root-to-leaf path1->2 represents the number 12.
+     * The root-to-leaf path1->3 represents the number 13.
+     * Return the sum = 12 + 13 =25.
+     *
+     * @param root
+     * @return
+     */
+    public int sumNumbers(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+
+        int rootValue = root.val;
+        if (root.left == null && root.right != null) {
+            return rootValue * 10 + root.right.val;
+        }
+
+        if (root.right == null && root.left != null) {
+            return rootValue * 10 + root.left.val;
+        }
+
+        return (rootValue * 10 + root.right.val) + (rootValue * 10 + root.left.val);
+    }
+
     public static void main(String[] args) {
         BinaryTree binaryTree = new BinaryTree();
         TreeNode rootNode = new TreeNode(1);
         TreeNode leftNode = new TreeNode(2);
         TreeNode rightNode = new TreeNode(3);
+
         rootNode.left = leftNode;
         rootNode.right = rightNode;
         rightNode.left = new TreeNode(4);
+
         System.out.println(String.format("%s %s", "最小深度为", binaryTree.minDepth(rootNode)));
         System.out.println(String.format("%s %s", "最小深度为", binaryTree.minDepth1(rootNode)));
+
+        System.out.println(binaryTree.sumNumbers(rootNode));
 
     }
 
