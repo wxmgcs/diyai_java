@@ -32,6 +32,7 @@ public class ListNodeDemo {
         listNode3.next = listNode4;
 
         ListNode  listNode = listNodeDemo.sortList(listNode1);
+        System.out.println(listNode.val);
 
     }
 
