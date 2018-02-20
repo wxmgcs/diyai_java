@@ -92,6 +92,44 @@ public class BinaryTree {
         return (rootValue * 10 + root.right.val) + (rootValue * 10 + root.left.val);
     }
 
+
+    int result;
+    public int sumNumbers2(TreeNode root)
+    {
+        if(root == null) return 0;
+        result = 0;
+        getSum(root, 0);
+        return result;
+    }
+
+    /**
+     * 左边和
+     * @param root
+     * @param sum
+     */
+    public void getSum(TreeNode root, int sum)
+    {
+        sum = sum * 10 + root.val;
+        // 没有子节点就直接返回
+        if(root.left==null && root.right==null)
+        {
+            result = result + sum;
+            return;
+        }
+
+        //有右节点
+        if(root.left != null)
+        {
+            getSum(root.left, sum);
+        }
+
+        //有左节点
+        if(root.right != null)
+        {
+            getSum(root.right, sum);
+        }
+    }
+
     public static void main(String[] args) {
         BinaryTree binaryTree = new BinaryTree();
         TreeNode rootNode = new TreeNode(1);
@@ -105,7 +143,7 @@ public class BinaryTree {
         System.out.println(String.format("%s %s", "最小深度为", binaryTree.minDepth(rootNode)));
         System.out.println(String.format("%s %s", "最小深度为", binaryTree.minDepth1(rootNode)));
 
-        System.out.println(binaryTree.sumNumbers(rootNode));
+        System.out.println(binaryTree.sumNumbers2(rootNode));
 
     }
 
