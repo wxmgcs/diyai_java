@@ -49,9 +49,14 @@ public class Test {
 
 
         //test5
+
         //testThreadStatus();
+
         //testThreadPriority();
-        testDaemon();
+
+        //testDaemon();
+
+        testPrivateData();
 
 
 //        try{
@@ -137,5 +142,17 @@ public class Test {
 
     public static void logger(String msg){
         System.out.println(msg);
+    }
+
+    public static void testPrivateData(){
+
+        HasSelfPrivateNum numRef = new HasSelfPrivateNum();
+
+        SelfPrivateThreadA threadA = new SelfPrivateThreadA(numRef);
+        threadA.start();
+
+        SelfPrivateThreadB threadB = new SelfPrivateThreadB(numRef);
+        threadB.start();
+
     }
 }
