@@ -16,6 +16,8 @@ public class UrlCharSetUtil {
      * @return
      */
     public static boolean isUTF8(String codingStr) throws  Exception{
+
+        long startTime=System.nanoTime();   //获取开始时间
         int numChars = codingStr.length();
         StringBuffer sb = new StringBuffer();
         int i = 0;
@@ -62,7 +64,10 @@ public class UrlCharSetUtil {
             }
         }
         System.out.println(utf8Count+":"+notUtf8Count);
-        return utf8Count >= notUtf8Count;
+        boolean result =  utf8Count >= notUtf8Count;
+        long endTime=System.nanoTime(); //获取结束时间
+        System.out.println(">> "+(endTime-startTime)*1.0/1000000+"ms");
+        return result;
     }
 
     /**
