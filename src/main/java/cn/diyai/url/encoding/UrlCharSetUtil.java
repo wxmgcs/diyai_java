@@ -70,6 +70,47 @@ public class UrlCharSetUtil {
         return result;
     }
 
+    public static boolean isGB2312(String codingStr) throws  Exception{
+
+        long startTime=System.nanoTime();   //获取开始时间
+        int numChars = codingStr.length();
+        int i = 0;
+        char c;
+        boolean isGB2312 = true;
+        while (i < numChars) {
+            c = codingStr.charAt(i);
+            switch (c) {
+                case '%':
+                    while ( ((i+2) < numChars) &&
+                            (c=='%')) {
+                        String item = codingStr.substring(i+1,i+3);
+
+                        int v = 0;
+                        try{
+                            v = Integer.parseInt(item,16);
+//                            System.out.println(v);
+                            if(v > 127 && v < 160){//过滤符号 0X7F和小于0xA0
+                                i = numChars;
+                                isGB2312 = false;
+                            }
+                        }catch(NumberFormatException e){
+
+                        }
+
+                        i+= 3;
+                        if (i < numChars)
+                            c = codingStr.charAt(i);
+                    }
+                default:
+                    i++;
+                    break;
+            }
+        }
+        long endTime=System.nanoTime(); //获取结束时间
+        System.out.println(">> "+(endTime-startTime)*1.0/1000000+"ms");
+        return isGB2312;
+    }
+
     /**
      * 是否是127内的数据
      * @param item
