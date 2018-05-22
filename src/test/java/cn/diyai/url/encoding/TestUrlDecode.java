@@ -16,315 +16,94 @@ import java.util.Random;
  */
 public class TestUrlDecode  extends TestCase {
 
-    public static int getCount(String urlencodeUrl){
-        int total = 0;
-        for(String item:urlencodeUrl.split("%")){
-            if(item.length() >= 2){
-                char item1 = item.charAt(0);
-                char item2 = item.charAt(1);
-                if (
-                        (('0' <= item1 && '9' >= item1)
-                                || ('A' <= item1 && 'F' >= item1)
-                                || ('a' <= item1 && 'f' >= item1)
-                        ) &&
-                                (('0' <= item2 && '9' >= item2)
-                                        || ('A' <= item2 && 'F' >= item2)
-                                        || ('a' <= item2 && 'f' >= item2)
-                                )
-                        ){
-                    System.out.println(item);
-                    total += 1;
-                }
-            }
-        }
-
-        return total;
-    }
 
     public static void main(String[] args) throws  Exception{
-//        testGB2312();
-//        testFullDecode();
-        //判断不完全
-//        testChiness();
-
-//        getDataSet();
-
-//        verify("亲爱的Ω乱，5000金，仅3天！尽 t.cn/RCHW5rB 百元！退订回T");
-//        verify("123亲爱的Ω乱，5000金，仅3天！尽 t.cn/RCHW5rB 百元！退订回T");
-//        verify("   亲爱的Ω乱，5000金，仅3天！尽 t.cn/RCHW5rB 百元！退订回T");
-//
         String str = null;
-        //有<符号
-        //<u卡贷>根据您的信息，您暂不符合借款条件，故您的借款申请（15000元，12期）审核未通过。如需借款，06月17日后可再次申请【悠融】
-//        int count = 10;
-////        while(count-- > 0){
-            str = "%3cu%bf%a8%b4%fb%3e%b8%f9%be%dd%c4%fa%b5%c4%d0%c5%cf%a2%a3%ac%c4%fa%d4%dd%b2%bb%b7%fb%ba%cf%bd%e8%bf%ee%cc%f5%bc%fe%a3%ac%b9%ca%c4%fa%b5%c4%bd%e8%bf%ee%c9%ea%c7%eb%a3%a815000%d4%aa%a3%ac12%c6%da%a3%a9%c9%f3%ba%cb%ce%b4%cd%a8%b9%fd%a1%a3%c8%e7%d0%e8%bd%e8%bf%ee%a3%ac06%d4%c217%c8%d5%ba%f3%bf%c9%d4%d9%b4%ce%c9%ea%c7%eb%a1%be%d3%c6%c8%da%a1%bf";
-            Assert.assertEquals(false,UrlCharSetUtil.isUTF8(str));
-            Assert.assertEquals(false,isUTF8(str));
-            Assert.assertEquals(true,UrlCharSetUtil.isGB2312(str));
-////        }
-//
-//
-        str =  "%e4%bd%a0%e5%a5%bd";
-        Assert.assertEquals(true,UrlCharSetUtil.isUTF8(str));
-        Assert.assertEquals(true,isUTF8(str));
-        Assert.assertEquals(false,UrlCharSetUtil.isGB2312(str));
 
-        str =  "%e4%bd%a0%e5%a5%bd%c4%e3%ba%c3%a1%be%b3%a9%cc%ec%d3%ce%a1%bf";//gbk
-        Assert.assertEquals(false,UrlCharSetUtil.isUTF8(str));
-        Assert.assertEquals(false,isUTF8(str));
-        Assert.assertEquals(true,UrlCharSetUtil.isGB2312(str));
-//        if(UrlCharSetUtil.isUTF8(str)){
-//            //write("encoding",URLDecoder.decode(msg,"utf-8"));
+//        System.out.println(URLDecoder.decode("%2fbackend%2fcms%2fphp%3f%3f1%3f%3f%3f%3f%3f%3f%3f%3f%3f%2c%3f%bb%c7%3f%3f%3f%3f%3f%3f%3f","gbk"));
+//        【jj比赛】亲爱的哟哟，切克闹Ψ，您的奖品已发货，请注意签收！关注微信服务号：jjfuwuhao，实时跟踪订单状态！
+        str = "%5b%cd%bc%c6%ac%5d";
+//        boolean method1 = UrlCharSetUtil.isUTF8(str);
+//        if(method1){
 //            System.out.println(URLDecoder.decode(str,"utf-8"));
 //        }else{
-//            //write("encoding",URLDecoder.decode(msg,"gb2312"));
 //            System.out.println(URLDecoder.decode(str,"gb2312"));
 //        }
 
+        boolean method2 = UrlCharSetUtil.isUTF82(str);
+        if(method2){
+            System.out.println(URLDecoder.decode(str,"utf-8"));
+        }else{
+            System.out.println(URLDecoder.decode(str,"gb2312"));
+        }
 
-        str =  "6502,%e4%bf%9d%e9%99%a9%e7%ae%b1%e5%8f%96%e6%ac%be%e9%aa%8c%e8%af%81%e7%a0%81%e3%80%82%e5%ae%98%e7%bd%91:www.jj.cn%e3%80%90jj%e6%af%94%e8%b5%9b%e3%80%91";
-        Assert.assertEquals(true,UrlCharSetUtil.isUTF8(str));
-        Assert.assertEquals(true,isUTF8(str));
-        Assert.assertEquals(false,UrlCharSetUtil.isGB2312(str));
-
-        //1元手机充值卡已充值到账,请您关注24小时内手机话费账单变化，如有问题请联系在线客服【jj比赛】
-        str =  "1%e5%85%83%e6%89%8b%e6%9c%ba%e5%85%85%e5%80%bc%e5%8d%a1%e5%b7%b2%e5%85%85%e5%80%bc%e5%88%b0%e8%b4%a6,%e8%af%b7%e6%82%a8%e5%85%b3%e6%b3%a824%e5%b0%8f%e6%97%b6%e5%86%85%e6%89%8b%e6%9c%ba%e8%af%9d%e8%b4%b9%e8%b4%a6%e5%8d%95%e5%8f%98%e5%8c%96%ef%bc%8c%e5%a6%82%e6%9c%89%e9%97%ae%e9%a2%98%e8%af%b7%e8%81%94%e7%b3%bb%e5%9c%a8%e7%ba%bf%e5%ae%a2%e6%9c%8d%e3%80%90jj%e6%af%94%e8%b5%9b%e3%80%91";
-        Assert.assertEquals(true,UrlCharSetUtil.isUTF8(str));
-        Assert.assertEquals(true,isUTF8(str));
-        Assert.assertEquals(false,UrlCharSetUtil.isGB2312(str));
-
-        //密码：9787;四小时所有终端可用
-        str =  "%c3%dc%c2%eb%a3%ba9787%3b%cb%c4%d0%a1%ca%b1%cb%f9%d3%d0%d6%d5%b6%cb%bf%c9%d3%c3";
-        Assert.assertEquals(false,UrlCharSetUtil.isUTF8(str));
-        Assert.assertEquals(false,isUTF8(str));
-        Assert.assertEquals(true,UrlCharSetUtil.isGB2312(str));
-
-        //【j】您正在使用手机验证码登录，验证码是：528430，验证码3分钟内输入有效。如非本人操作，请忽略。
-        str =  "%a1%bej%a1%bf%c4%fa%d5%fd%d4%da%ca%b9%d3%c3%ca%d6%bb%fa%d1%e9%d6%a4%c2%eb%b5%c7%c2%bc%a3%ac%d1%e9%d6%a4%c2%eb%ca%c7%a3%ba528430%a3%ac%d1%e9%d6%a4%c2%eb3%b7%d6%d6%d3%c4%da%ca%e4%c8%eb%d3%d0%d0%a7%a1%a3%c8%e7%b7%c7%b1%be%c8%cb%b2%d9%d7%f7%a3%ac%c7%eb%ba%f6%c2%d4%a1%a3";
-        Assert.assertEquals(false,UrlCharSetUtil.isUTF8(str));
-        Assert.assertEquals(false,isUTF8(str));
-        Assert.assertEquals(true,UrlCharSetUtil.isGB2312(str));
-
-        str =  "%a1%bej%a1%bf%c4%fa%d5%fd%d4%da%ca%b9%d3%c3%ca%d6%bb%fa%d1%e9%d6%a4%c2%eb%b5%c7%c2%bc%a3%ac%d1%e9%d6%a4%c2%eb%ca%c7%a3%ba528430%a3%ac%d1%e9%d6%a4%c2%eb3%b7%d6%d6%d3%c4%da%ca%e4%c8%eb%d3%d0%d0%a7%a1%a3%c8%e7%b7%c7%b1%be%c8%cb%b2%d9%d7%f7%a3%ac%c7%eb%ba%f6%c2%d4%a1%a3";
-        Assert.assertEquals(false,UrlCharSetUtil.isUTF8(str));
-        Assert.assertEquals(false,isUTF8(str));
-        Assert.assertEquals(true,UrlCharSetUtil.isGB2312(str));
-
-        //你好000:sds
-        str =  "%e4%bd%a0%e5%a5%bd000%3asds";
-        Assert.assertEquals(true,UrlCharSetUtil.isUTF8(str));
-        Assert.assertEquals(true,isUTF8(str));
-        Assert.assertEquals(false,UrlCharSetUtil.isGB2312(str));
-
-        //你好000:sds
-        str =  "%c4%e3%ba%c3000%3asds";
-        Assert.assertEquals(false,UrlCharSetUtil.isUTF8(str));
-        Assert.assertEquals(false,isUTF8(str));
-        Assert.assertEquals(true,UrlCharSetUtil.isGB2312(str));
-
-    }
-
-    public static void testGB2312()throws  Exception{
-//        String baseStr = "浣犲ソ你好【畅天游】";
-        String baseStr = "你好:【畅天游】";
-        String gb2312str = URLEncoder.encode(baseStr, "gb2312");
-        System.out.println("encode(gb2312):"+gb2312str);
-
-        String utf8str = URLEncoder.encode(baseStr, "utf-8");
-        System.out.println("encode(utf8str):"+utf8str);
-
-        String gbkstr = URLEncoder.encode(baseStr, "gbk");
-        System.out.println("encode(gbkstr):"+gbkstr);
-
-        Assert.assertEquals(true,UrlCharSetUtil.isGB2312(gb2312str));
+//        Assert.assertEquals(true,method1);
+//        Assert.assertEquals(true,method2);
 
 
-    }
 
-    public static void testFullDecode() throws  Exception{
-        //<u卡贷>根据您的信息，您暂不符合借款条件，故您的借款申请（15000元，12期）审核未通过。如需借款，06月17日后可再次申请【悠融】
-        String name = "中";
-        String encodeStr1 = URLEncoder.encode(name,"utf-8");
-        System.out.println(encodeStr1);
-
-        String encodeStr2 = URLEncoder.encode(name,"gb2312");
-        System.out.println(encodeStr2);
-
-        System.out.println(URLDecoder.decode(encodeStr1,"gb2312"));
-        System.out.println(URLDecoder.decode(encodeStr1,"utf-8"));
-
-        System.out.println(URLDecoder.decode(encodeStr2,"utf-8"));
-        System.out.println(URLDecoder.decode(encodeStr2,"gb2312"));
-
-    }
-
-    /**
-     * 任何一个编码用其他字符集解码都会多
-     * 可以使用utf-8编码和gb2312分别解码，如果前者大于后者就是gb2312编码，否则就是utf-8编码
-     * @param encodeStr
-     * @return
-     * @throws Exception
-     */
-    public static boolean isUTF8(String encodeStr) throws  Exception{
-        long startTime=System.nanoTime();   //获取开始时间
-        String gb2312Str = URLDecoder.decode(encodeStr,"gb2312");
-        String utf8Str = URLDecoder.decode(encodeStr,"utf-8");
-        boolean result = gb2312Str.length() > utf8Str.length();
-        long endTime=System.nanoTime(); //获取结束时间
-        System.out.println(">> "+(endTime-startTime)*1.0/1000000+"ms");
-        return result;
-    }
-
-    /*会有问题*/
-    public static boolean isUTF82(String url) throws Exception{
-        //先用utf-8解码，然后在用utf-8编码，和提交过来编码一样，就是utf-8不一样，就是 gb2312
-        return URLEncoder.encode(URLDecoder.decode(url,"utf-8"),"utf-8").equals(url);
+//        getDataSet();
 
     }
 
     public static void getDataSet() throws  Exception{
-        String xpath = "/Users/diyai/workshop/Dump20180521.sql";
+        String xpath = "/Users/diyai/workshop/sms_logs/Dump20180522.sql";
 //        String xpath = "/Users/diyai/workshop/test_smsinfo.sql";
 
         FileReader reader = new FileReader(xpath);
         BufferedReader br = new BufferedReader(reader);
 
         String str = null;
-        int totalLines = 0;
+        int totalMsg= 0;
 
         while((str = br.readLine()) != null) {
-            totalLines += 1;
+
             if(str.contains("?")){
                 for(String url:str.split("/")){
                     if(url.contains("aspx?")){
-                        Map<String, String> mapRequest = URLRequest(url);
+                        Map<String, String> mapRequest = TestHelper.URLRequest(url);
                         String msg = mapRequest.get("msg");
                         if(msg == null){
                             continue;
                         }
-                        System.out.println(">> "+msg);
-                        //write("encoding",msg);
-                        if(UrlCharSetUtil.isUTF8(msg)){
-                            //write("encoding",URLDecoder.decode(msg,"utf-8"));
-                            System.out.println(URLDecoder.decode(msg,"utf-8"));
-                        }else{
-                            //write("encoding",URLDecoder.decode(msg,"gb2312"));
-                            System.out.println(URLDecoder.decode(msg,"gb2312"));
+                        totalMsg += 1;
+                        boolean v1 = UrlCharSetUtil.isUTF8(msg);
+                        boolean v2 = UrlCharSetUtil.isUTF82(msg);
+                        if (v1 != v2){
+                            System.out.println(">> "+msg);
+                            TestHelper.write("encoding",msg);
+                            TestHelper.write("encoding",URLDecoder.decode(msg,"utf-8"));
+                            TestHelper.write("encoding",URLDecoder.decode(msg,"gb2312"));
                         }
+                        //write("encoding",msg);
+//                        if(UrlCharSetUtil.isUTF8(msg)){
+//                            TestHelper.write("encoding",URLDecoder.decode(msg,"utf-8"));
+////                            System.out.println(URLDecoder.decode(msg,"utf-8"));
+//                        }else{
+//                            TestHelper.write("encoding",URLDecoder.decode(msg,"gb2312"));
+////                            System.out.println(URLDecoder.decode(msg,"gb2312"));
+//                        }
 //                        if(isUTF8(msg)){
 //                            write("encoding2",URLDecoder.decode(msg,"utf-8"));
 //                        }else{
 //                            write("encoding2",URLDecoder.decode(msg,"gb2312"));
 //                        }
+
+                        if(totalMsg % 100 == 0){
+                            System.out.println(">> "+totalMsg);
+                        }
+
+
                     }
                 }
 //                break;
             }
         }
 
-        System.out.println(totalLines);
         br.close();
         reader.close();
 
     }
-
-    /**
-     * 解析出url请求的路径，包括页面
-     * @param strURL url地址
-     * @return url路径
-     */
-    public static String UrlPage(String strURL)
-    {
-        String strPage=null;
-        String[] arrSplit=null;
-
-        strURL=strURL.trim().toLowerCase();
-
-        arrSplit=strURL.split("[?]");
-        if(strURL.length()>0)
-        {
-            if(arrSplit.length>1)
-            {
-                if(arrSplit[0]!=null)
-                {
-                    strPage=arrSplit[0];
-                }
-            }
-        }
-
-        return strPage;
-    }
-    /**
-     * 去掉url中的路径，留下请求参数部分
-     * @param strURL url地址
-     * @return url请求参数部分
-     */
-    private static String TruncateUrlPage(String strURL)
-    {
-        String strAllParam=null;
-        String[] arrSplit=null;
-
-        strURL=strURL.trim().toLowerCase();
-
-        arrSplit=strURL.split("[?]");
-        if(strURL.length()>1)
-        {
-            if(arrSplit.length>1)
-            {
-                if(arrSplit[1]!=null)
-                {
-                    strAllParam=arrSplit[1];
-                }
-            }
-        }
-
-        return strAllParam;
-    }
-
-    /**
-     * 解析出url参数中的键值对
-     * 如 "index.jsp?Action=del&id=123"，解析出Action:del,id:123存入map中
-     * @param URL  url地址
-     * @return  url请求参数部分
-     */
-    public static Map<String, String> URLRequest(String URL)
-    {
-        Map<String, String> mapRequest = new HashMap<String, String>();
-
-        String[] arrSplit=null;
-
-        String strUrlParam=TruncateUrlPage(URL);
-        if(strUrlParam==null)
-        {
-            return mapRequest;
-        }
-        //每个键值为一组 www.2cto.com
-        arrSplit=strUrlParam.split("[&]");
-        for(String strSplit:arrSplit)
-        {
-            String[] arrSplitEqual=null;
-            arrSplitEqual= strSplit.split("[=]");
-
-            //解析出键值
-            if(arrSplitEqual.length>1)
-            {
-                //正确解析
-                mapRequest.put(arrSplitEqual[0], arrSplitEqual[1]);
-
-            }
-            else
-            {
-                if(arrSplitEqual[0]!="")
-                {
-                    //只有参数没有值，不加入
-                    mapRequest.put(arrSplitEqual[0], "");
-                }
-            }
-        }
-        return mapRequest;
-    }
-
 
     public static void verify(String baseStr) throws  Exception{
         String codingStr = URLEncoder.encode(baseStr, "GB2312");
@@ -349,14 +128,14 @@ public class TestUrlDecode  extends TestCase {
             String keyWord = null;
 //            keyWord = URLDecoder.decode(gb2312str,"GB2312");
             keyWord = URLDecoder.decode(gb2312str,"GB2312");
-            count = getCount(gb2312str);
+            count = TestHelper.getCount(gb2312str);
             System.out.println("decode(gb2312):"+keyWord+",count(%)="+count);
 
             String utf8str = URLEncoder.encode(baseStr,"utf-8");
             System.out.println("encode(utf-8):"+utf8str);
 //            utf8str = URLEncoder.encode(utf8str,"utf-8");
             keyWord = URLDecoder.decode(utf8str,"utf-8");
-            count = getCount(utf8str);
+            count = TestHelper.getCount(utf8str);
             System.out.println("decode(utf-8):"+keyWord+",count(%)="+count);
 
         } catch (UnsupportedEncodingException e) {
@@ -437,52 +216,48 @@ public class TestUrlDecode  extends TestCase {
     }
 
 
-    public static String addZero(int i) {
-        if (i < 10) {
-            String tmpString = "0" + i;
-            return tmpString;
-        } else {
-            return String.valueOf(i);
+    public static void testGB2312()throws  Exception{
+//        String baseStr = "浣犲ソ你好【畅天游】";
+        String baseStr = "你好:【畅天游】";
+        String gb2312str = URLEncoder.encode(baseStr, "gb2312");
+        System.out.println("encode(gb2312):"+gb2312str);
 
-        }
-    }
+        String utf8str = URLEncoder.encode(baseStr, "utf-8");
+        System.out.println("encode(utf8str):"+utf8str);
 
-    public static void write(String fileNameHead,String logString) {
+        String gbkstr = URLEncoder.encode(baseStr, "gbk");
+        System.out.println("encode(gbkstr):"+gbkstr);
 
-        try {
+        Assert.assertEquals(true,UrlCharSetUtil.isGB2312(gb2312str));
 
-            String logFilePathName=null;
-
-            Calendar cd = Calendar.getInstance();//日志文件时间
-            int year=cd.get(Calendar.YEAR);
-            String month=addZero(cd.get(Calendar.MONTH)+1);
-            String day=addZero(cd.get(Calendar.DAY_OF_MONTH));
-            String hour=addZero(cd.get(Calendar.HOUR_OF_DAY));
-            String min=addZero(cd.get(Calendar.MINUTE));
-            String sec=addZero(cd.get(Calendar.SECOND));
-
-            String logFilePath = "./logs";
-            File fileParentDir=new File(logFilePath);//判断log目录是否存在
-            if (!fileParentDir.exists()) {
-                fileParentDir.mkdir();
-            }
-
-            if (fileNameHead==null||fileNameHead.equals("")) {
-                logFilePathName=logFilePath+File.separator+year+month+day+".log";//日志文件名
-            }else {
-                logFilePathName=logFilePath+File.separator+fileNameHead+year+month+day+".log";//日志文件名
-            }
-
-            PrintWriter printWriter=new PrintWriter(new FileOutputStream(logFilePathName, true));//紧接文件尾写入日志字符串
-            String time="["+year+"-"+month+"-"+day+" "+hour+":"+min+":"+sec+"] ";
-            printWriter.println(time+logString);
-            printWriter.flush();
-
-        } catch (FileNotFoundException e) {
-            e.getMessage();
-        }
 
     }
+
+    public static void testFullDecode() throws  Exception{
+        //<u卡贷>根据您的信息，您暂不符合借款条件，故您的借款申请（15000元，12期）审核未通过。如需借款，06月17日后可再次申请【悠融】
+        String name = "中";
+        String encodeStr1 = URLEncoder.encode(name,"utf-8");
+        System.out.println(encodeStr1);
+
+        String encodeStr2 = URLEncoder.encode(name,"gb2312");
+        System.out.println(encodeStr2);
+
+        System.out.println(URLDecoder.decode(encodeStr1,"gb2312"));
+        System.out.println(URLDecoder.decode(encodeStr1,"utf-8"));
+
+        System.out.println(URLDecoder.decode(encodeStr2,"utf-8"));
+        System.out.println(URLDecoder.decode(encodeStr2,"gb2312"));
+
+    }
+
+
+    /*会有问题*/
+    public static boolean isUTF82(String url) throws Exception{
+        //先用utf-8解码，然后在用utf-8编码，和提交过来编码一样，就是utf-8不一样，就是 gb2312
+        return URLEncoder.encode(URLDecoder.decode(url,"utf-8"),"utf-8").equals(url);
+
+    }
+
 }
 
 //可以查找局部，找到第一个不是%xx的字符，截取这部分作为样本

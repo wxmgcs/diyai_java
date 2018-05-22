@@ -63,16 +63,23 @@ public class UrlCharSetUtil {
                     break;
             }
         }
-        System.out.println(utf8Count+":"+notUtf8Count);
+//        System.out.println(utf8Count+":"+notUtf8Count);
+//        long endTime=System.nanoTime(); //获取结束时间
+//        System.out.println(">> "+(endTime-startTime)*1.0/1000000+"ms");
         boolean result =  utf8Count >= notUtf8Count;
-        long endTime=System.nanoTime(); //获取结束时间
-        System.out.println(">> "+(endTime-startTime)*1.0/1000000+"ms");
+//        if(result){
+//            System.out.println(URLDecoder.decode(codingStr,"utf-8"));
+//        }else {
+//            System.out.println(URLDecoder.decode(codingStr,"gb2312"));
+//        }
+//        endTime=System.nanoTime(); //获取结束时间
+//        System.out.println(">> "+(endTime-startTime)*1.0/1000000+"ms");
         return result;
     }
 
     public static boolean isGB2312(String codingStr) throws  Exception{
 
-        long startTime=System.nanoTime();   //获取开始时间
+//        long startTime=System.nanoTime();   //获取开始时间
         int numChars = codingStr.length();
         int i = 0;
         char c;
@@ -106,8 +113,8 @@ public class UrlCharSetUtil {
                     break;
             }
         }
-        long endTime=System.nanoTime(); //获取结束时间
-        System.out.println(">> "+(endTime-startTime)*1.0/1000000+"ms");
+//        long endTime=System.nanoTime(); //获取结束时间
+//        System.out.println(">> "+(endTime-startTime)*1.0/1000000+"ms");
         return isGB2312;
     }
 
@@ -139,4 +146,32 @@ public class UrlCharSetUtil {
         //使用gb2312解码utf-8会出现乱码
         return decodeStr.length() == 1;
     }
+
+    /**
+     * 任何一个编码用其他字符集解码都会多
+     * 可以使用utf-8编码和gb2312分别解码，如果前者大于后者就是gb2312编码，否则就是utf-8编码
+     * @param encodeStr
+     * @return
+     * @throws Exception
+     */
+    public static boolean isUTF82(String encodeStr) throws  Exception{
+//        long startTime=System.nanoTime();   //获取开始时间
+        String utf8Str = URLDecoder.decode(encodeStr,"utf-8");
+
+//        long endTime=System.nanoTime(); //获取结束时间
+//        System.out.println(">> "+(endTime-startTime)*1.0/1000000+"ms");
+        String gb2312Str = URLDecoder.decode(encodeStr,"gb2312");
+
+        boolean result = gb2312Str.length() >= utf8Str.length();
+//        if(result){
+//            System.out.println(utf8Str);
+//        }else {
+//            System.out.println(gb2312Str);
+//        }
+
+//        endTime=System.nanoTime(); //获取结束时间
+//        System.out.println(">> "+(endTime-startTime)*1.0/1000000+"ms");
+        return result;
+    }
+
 }
