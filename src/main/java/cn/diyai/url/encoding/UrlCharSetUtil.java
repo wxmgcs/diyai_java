@@ -155,14 +155,21 @@ public class UrlCharSetUtil {
      * @throws Exception
      */
     public static boolean isUTF82(String encodeStr) throws  Exception{
-//        long startTime=System.nanoTime();   //获取开始时间
+        long startTime=System.nanoTime();   //获取开始时间
         String utf8Str = URLDecoder.decode(encodeStr,"utf-8");
 
 //        long endTime=System.nanoTime(); //获取结束时间
 //        System.out.println(">> "+(endTime-startTime)*1.0/1000000+"ms");
         String gb2312Str = URLDecoder.decode(encodeStr,"gb2312");
+        int gb2312Len = gb2312Str.length();
+        int utf8Len = utf8Str.length();
+        if(gb2312Len == utf8Len){
+            return isUTF8(encodeStr);
+        }else if(gb2312Len > utf8Len){
+            return true;
+        }
+        return false;
 
-        boolean result = gb2312Str.length() >= utf8Str.length();
 //        if(result){
 //            System.out.println(utf8Str);
 //        }else {
@@ -171,7 +178,6 @@ public class UrlCharSetUtil {
 
 //        endTime=System.nanoTime(); //获取结束时间
 //        System.out.println(">> "+(endTime-startTime)*1.0/1000000+"ms");
-        return result;
     }
 
 }

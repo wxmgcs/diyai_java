@@ -20,11 +20,20 @@ public class TestSample2 extends TestCase {
         //<u卡贷>根据您的信息，您暂不符合借款条件，故您的借款申请（15000元，12期）审核未通过。如需借款，06月17日后可再次申请【悠融】
         str = "%3cu%bf%a8%b4%fb%3e%b8%f9%be%dd%c4%fa%b5%c4%d0%c5%cf%a2%a3%ac%c4%fa%d4%dd%b2%bb%b7%fb%ba%cf%bd%e8%bf%ee%cc%f5%bc%fe%a3%ac%b9%ca%c4%fa%b5%c4%bd%e8%bf%ee%c9%ea%c7%eb%a3%a815000%d4%aa%a3%ac12%c6%da%a3%a9%c9%f3%ba%cb%ce%b4%cd%a8%b9%fd%a1%a3%c8%e7%d0%e8%bd%e8%bf%ee%a3%ac06%d4%c217%c8%d5%ba%f3%bf%c9%d4%d9%b4%ce%c9%ea%c7%eb%a1%be%d3%c6%c8%da%a1%bf";
         Assert.assertEquals(false,UrlCharSetUtil.isUTF82(str));
-        str =  "%e4%bd%a0%e5%a5%bd";
+        str = "%3Cu%E5%8D%A1%E8%B4%B7%3E%E6%A0%B9%E6%8D%AE%E6%82%A8%E7%9A%84%E4%BF%A1%E6%81%AF%EF%BC%8C%E6%82%A8%E6%9A%82%E4%B8%8D%E7%AC%A6%E5%90%88%E5%80%9F%E6%AC%BE%E6%9D%A1%E4%BB%B6%EF%BC%8C%E6%95%85%E6%82%A8%E7%9A%84%E5%80%9F%E6%AC%BE%E7%94%B3%E8%AF%B7%EF%BC%8815000%E5%85%83%EF%BC%8C12%E6%9C%9F%EF%BC%89%E5%AE%A1%E6%A0%B8%E6%9C%AA%E9%80%9A%E8%BF%87%E3%80%82%E5%A6%82%E9%9C%80%E5%80%9F%E6%AC%BE%EF%BC%8C06%E6%9C%8817%E6%97%A5%E5%90%8E%E5%8F%AF%E5%86%8D%E6%AC%A1%E7%94%B3%E8%AF%B7%E3%80%90%E6%82%A0%E8%9E%8D%E3%80%91";
         Assert.assertEquals(true,UrlCharSetUtil.isUTF82(str));
 
-        str =  "%e4%bd%a0%e5%a5%bd%c4%e3%ba%c3%a1%be%b3%a9%cc%ec%d3%ce%a1%bf";//gbk
+        //你好
+        str =  "%e4%bd%a0%e5%a5%bd";
+        Assert.assertEquals(true,UrlCharSetUtil.isUTF82(str));
+        str =  "%C4%E3%BA%C3";
         Assert.assertEquals(false,UrlCharSetUtil.isUTF82(str));
+
+        //浣犲ソ你好【畅天游】
+        str =  "%e4%bd%a0%e5%a5%bd%c4%e3%ba%c3%a1%be%b3%a9%cc%ec%d3%ce%a1%bf";
+        Assert.assertEquals(false,UrlCharSetUtil.isUTF82(str));
+        str =  "%E6%B5%A3%E7%8A%B2%E3%82%BD%E4%BD%A0%E5%A5%BD%E3%80%90%E7%95%85%E5%A4%A9%E6%B8%B8%E3%80%91";
+        Assert.assertEquals(true,UrlCharSetUtil.isUTF82(str));
 
         str =  "6502,%e4%bf%9d%e9%99%a9%e7%ae%b1%e5%8f%96%e6%ac%be%e9%aa%8c%e8%af%81%e7%a0%81%e3%80%82%e5%ae%98%e7%bd%91:www.jj.cn%e3%80%90jj%e6%af%94%e8%b5%9b%e3%80%91";
         Assert.assertEquals(true,UrlCharSetUtil.isUTF82(str));
@@ -32,6 +41,8 @@ public class TestSample2 extends TestCase {
         //qwewrwrr1元手机充值卡已充值到账,请您关注24小时内手机话费账单变化，如有问题请联系在线客服【jj比赛】
         str =  "qwewrwrr1%e5%85%83%e6%89%8b%e6%9c%ba%e5%85%85%e5%80%bc%e5%8d%a1%e5%b7%b2%e5%85%85%e5%80%bc%e5%88%b0%e8%b4%a6,%e8%af%b7%e6%82%a8%e5%85%b3%e6%b3%a824%e5%b0%8f%e6%97%b6%e5%86%85%e6%89%8b%e6%9c%ba%e8%af%9d%e8%b4%b9%e8%b4%a6%e5%8d%95%e5%8f%98%e5%8c%96%ef%bc%8c%e5%a6%82%e6%9c%89%e9%97%ae%e9%a2%98%e8%af%b7%e8%81%94%e7%b3%bb%e5%9c%a8%e7%ba%bf%e5%ae%a2%e6%9c%8d%e3%80%90jj%e6%af%94%e8%b5%9b%e3%80%91";
         Assert.assertEquals(true,UrlCharSetUtil.isUTF82(str));
+        str =  "qwewrwrr1%D4%AA%CA%D6%BB%FA%B3%E4%D6%B5%BF%A8%D2%D1%B3%E4%D6%B5%B5%BD%D5%CB%2C%C7%EB%C4%FA%B9%D8%D7%A224%D0%A1%CA%B1%C4%DA%CA%D6%BB%FA%BB%B0%B7%D1%D5%CB%B5%A5%B1%E4%BB%AF%A3%AC%C8%E7%D3%D0%CE%CA%CC%E2%C7%EB%C1%AA%CF%B5%D4%DA%CF%DF%BF%CD%B7%FE%A1%BEjj%B1%C8%C8%FC%A1%BF";
+        Assert.assertEquals(false,UrlCharSetUtil.isUTF82(str));
 
         //密码：9787;四小时所有终端可用
         str =  "%c3%dc%c2%eb%a3%ba9787%3b%cb%c4%d0%a1%ca%b1%cb%f9%d3%d0%d6%d5%b6%cb%bf%c9%d3%c3";
@@ -107,9 +118,14 @@ public class TestSample2 extends TestCase {
         Assert.assertEquals(false,UrlCharSetUtil.isUTF82(str));
 
         str = "%5b%cd%bc%c6%ac%5d";
+//        Assert.assertEquals(false,UrlCharSetUtil.isUTF8(str));
         Assert.assertEquals(false,UrlCharSetUtil.isUTF82(str));
 
         str = "%2fbackend%2fcms%2fphp%a3%ba3%b4%ce%2c%3cfatalerror%3e%0atype%3a64%0a";
+        Assert.assertEquals(false,UrlCharSetUtil.isUTF82(str));
+
+        //123133你好123133
+        str = "123133%C4%E3%BA%C3123133";
         Assert.assertEquals(false,UrlCharSetUtil.isUTF82(str));
 
 //        str = "%2fbackend%2fcms%2fphp%3f%3f1%3f%3f%3f%3f%3f%3f%3f%3f%3f%2c%3f%bb%c7%3f%3f%3f%3f%3f%3f%3f";

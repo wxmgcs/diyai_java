@@ -30,19 +30,19 @@ public class TestUrlDecode  extends TestCase {
 //            System.out.println(URLDecoder.decode(str,"gb2312"));
 //        }
 
-        boolean method2 = UrlCharSetUtil.isUTF82(str);
-        if(method2){
-            System.out.println(URLDecoder.decode(str,"utf-8"));
-        }else{
-            System.out.println(URLDecoder.decode(str,"gb2312"));
-        }
+//        boolean method2 = UrlCharSetUtil.isUTF82(str);
+//        if(method2){
+//            System.out.println(URLDecoder.decode(str,"utf-8"));
+//        }else{
+//            System.out.println(URLDecoder.decode(str,"gb2312"));
+//        }
 
 //        Assert.assertEquals(true,method1);
 //        Assert.assertEquals(true,method2);
 
 
 
-//        getDataSet();
+        getDataSet();
 
     }
 
@@ -70,10 +70,20 @@ public class TestUrlDecode  extends TestCase {
                         boolean v1 = UrlCharSetUtil.isUTF8(msg);
                         boolean v2 = UrlCharSetUtil.isUTF82(msg);
                         if (v1 != v2){
-                            System.out.println(">> "+msg);
+                            
                             TestHelper.write("encoding",msg);
-                            TestHelper.write("encoding",URLDecoder.decode(msg,"utf-8"));
-                            TestHelper.write("encoding",URLDecoder.decode(msg,"gb2312"));
+                            if(v1){
+                                TestHelper.write("encoding",URLDecoder.decode(msg,"utf-8"));
+                            }else{
+                                TestHelper.write("encoding",URLDecoder.decode(msg,"gb2312"));
+                            }
+                            
+                            TestHelper.write("encoding2",msg);
+                            if(v2){
+                                TestHelper.write("encoding2",URLDecoder.decode(msg,"utf-8"));
+                            }else{
+                                TestHelper.write("encoding2",URLDecoder.decode(msg,"gb2312"));
+                            }
                         }
                         //write("encoding",msg);
 //                        if(UrlCharSetUtil.isUTF8(msg)){
