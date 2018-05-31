@@ -43,4 +43,9 @@ public abstract class Employee {
         this.address = address;
     }
 
+    public void run(){
+        System.out.println(this.name+" is runing");
+
+    }
+
 }

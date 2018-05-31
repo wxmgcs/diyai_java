@@ -10,6 +10,9 @@ public class Salary extends Employee {
         super(name,adderss);
         this.name = name;
     }
+    public Salary(){
+
+    }
 
     public void travel(){
         System.out.println(this.name+" is traving");
