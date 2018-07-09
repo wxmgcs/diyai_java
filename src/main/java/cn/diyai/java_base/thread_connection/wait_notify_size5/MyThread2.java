@@ -19,6 +19,7 @@ public class MyThread2 extends Thread{
 
                     if(MyList.size() == 5){
                         System.out.println("开始    notify time="+System.currentTimeMillis());
+                        //执行完notify方法后，锁没有自动释放
                         lock.notify();
                         System.out.println("结束    notify time="+System.currentTimeMillis());
                     }
