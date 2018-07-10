@@ -18,8 +18,8 @@ public class MyStack {
             }
 
             list.add("anything="+Math.random());
-            this.notify();
-            System.out.println("push="+list.size());
+            this.notifyAll();
+            System.out.println(Thread.currentThread().getName()+" push="+list.size());
 
         }catch (Exception ex){
 
@@ -37,7 +37,7 @@ public class MyStack {
             returnValue = "" +list.get(0);
 
             list.remove(0);
-            this.notify();
+            this.notifyAll();
             System.out.println("pop= "+list.size());
         }catch (Exception ex){
 

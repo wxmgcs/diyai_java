@@ -10,6 +10,6 @@ public class C {
     }
 
     public void popService(){
-        System.out.println("pop="+myStack.pop());
+        System.out.println(Thread.currentThread().getName()+" pop="+myStack.pop());
     }
 }
