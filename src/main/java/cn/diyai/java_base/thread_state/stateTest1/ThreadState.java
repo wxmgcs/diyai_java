@@ -1,4 +1,4 @@
-package cn.diyai.java_base.thread_state;
+package cn.diyai.java_base.thread_state.stateTest1;
 
 public class ThreadState {
 

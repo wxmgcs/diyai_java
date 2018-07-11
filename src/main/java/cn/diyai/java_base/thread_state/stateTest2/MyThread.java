@@ -1,4 +1,4 @@
-package cn.diyai.java_base.thread_state;
+package cn.diyai.java_base.thread_state.stateTest2;
 
 public class MyThread extends Thread{
     public MyThread() {
