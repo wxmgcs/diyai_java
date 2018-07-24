@@ -18,4 +18,6 @@ public class InsertionSort extends Sort{
         A[i] = A[j];
         A[j] = temp;
     }
+
+
 }
