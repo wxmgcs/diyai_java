@@ -27,7 +27,13 @@ public class Test {
 
             for(Constructor con : cons){
                 System.out.println("constructor: "+con);
+
+                if(con.toString().equals("public cn.diyai.java_base.reflection.Person(java.lang.String)")){
+                    System.out.println("find");
+                }
             }
+
+
 
             per1=(Person)cons[2].newInstance("patrick");
 
